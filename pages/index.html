@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hat Resources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside id="sidebar-container" class="sidebar"></aside>
+        <div id="content" class="main-content"></div>
+    </nav>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script> 
+    fetch("components/sidebar.html")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("sidebar-container").innerHTML = data;
+    });
+
+    fetch("../content/index.md")
+    .then(res => res.text())
+    .then(md => {
+        document.getElementById("content").innerHTML = marked.parse(md, { breaks: true });
+    });
+</script>
+</body>
+</html>

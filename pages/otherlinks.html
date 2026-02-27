@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hat Resources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside id="sidebar-container" class="sidebar"></aside>
+    </nav>
+<script>
+    fetch("components/sidebar.html")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("sidebar-container").innerHTML = data;
+    });
+</script>
+</body>
+</html>
